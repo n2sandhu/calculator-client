@@ -1,0 +1,82 @@
+<div class="container" style="margin-top:200px; width:200px; padding:10px; background-color:black">
+  <div class="row">
+    <div class="col col-sm-12">
+      <div style="border: 1px solid gray; width:100%; padding:5px">
+        <div style="color:white; width:20%; cursor:pointer; outline:none" ng-click="vm.displayValue = 0; vm.operator = ''">
+          AC
+        </div>
+        <div>
+          {{vm.displayValue}}
+        </div>
+      </div>
+    </div> 
+    
+  </div>
+  <div class="row">
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(7, vm.displayValue)">7</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(8, vm.displayValue)">8</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(9, vm.displayValue)">9</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4>
+        <button ng-disabled="vm.operator != ''" ng-click="vm.updatedOperator('divide', vm.displayValue)">/</button>
+      </h4>
+    </div> 
+  </div>
+  <div class="row">
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(4, vm.displayValue)">4</button></h4>
+    </div> 
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(5, vm.displayValue)">5</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(6, vm.displayValue)">6</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4>
+        <button ng-disabled="vm.operator != ''" ng-click="vm.updatedOperator('multiply', vm.displayValue)">X</button>
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(1, vm.displayValue)">1</button></h4>
+    </div> 
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(2, vm.displayValue)">2</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(3, vm.displayValue)">3</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4>
+        <button ng-disabled="vm.operator != ''" ng-click="vm.updatedOperator('subtract', vm.displayValue)">-</button>
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.updateDisplay(0, vm.displayValue)">0</button></h4>
+    </div> 
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.setDecimal(vm.displayValue)">.</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4><button ng-click="vm.doCalculation(vm.operator, vm.displayValue)">=</button></h4>
+    </div>
+    <div class="col col-sm-3">
+      <h4>
+        <button ng-disabled="vm.operator != ''" ng-click="vm.updatedOperator('add', vm.displayValue)">+</button>
+      </h4>
+    </div>
+  </div>
+</div>
+
+{{vm.operator}}
+
