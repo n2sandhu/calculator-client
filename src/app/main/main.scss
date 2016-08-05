@@ -1,0 +1,49 @@
+.container{
+  padding:0 !important;
+  margin-top:200px;
+  width:200px !important;
+  font-weight: 100;
+
+  .result-container{
+    border: 1px solid gray;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+
+    .col{
+      height: auto !important;
+    }
+
+    .result-display{
+      text-align: right;
+      overflow-x: hidden;
+    }
+  }
+
+  .row{
+    margin: 0 !important;
+
+    .col{
+      padding: 0 !important;
+      height: 50px;
+
+      button{
+        width: 100%;
+        background-color: #e0e0e0;
+        height: 100%;
+        font-size: 20px;
+        border: 1px solid #8e8e8e;
+      }
+
+      button:focus{
+        outline: none !important;
+      }
+
+      .operator-button{
+        background-color: #f79231;
+        color: white;
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@ gulp.task('partials', function () {
 
 });
 
-gulp.task('calculator-tests', ['add', 'subtract', 'divide', 'multiply'], function () {
+gulp.task('calculator-tests', ['test-add', 'test-subtract', 'test-divide', 'test-multiply'], function () {
 
 });
 
@@ -21,7 +21,7 @@ gulp.task('test-add', function () {
  console.log("RUNNING ADDITION TEST");
  console.log("Should return sum equal to 16 with value1 = 6 and value2 = 10");
 
- http.get("http://0.0.0.0:3000/api/calculators/add?value1=6&value2=10",function successCallback(response) {
+ http.get("http://0.0.0.0:5000/api/calculators/add?value1=6&value2=10",function successCallback(response) {
        var body='';
         response.on('data', function(d) {
             body += d;
@@ -42,7 +42,7 @@ gulp.task('test-subtract', function () {
    console.log("RUNNING SUBTRACTION TEST");
    console.log("Should return difference equal to 6 with value1 = 10 and value2 = 4");
 
-   http.get("http://0.0.0.0:3000/api/calculators/subtract?value1=10&value2=4",function successCallback(response) {
+   http.get("http://0.0.0.0:5000/api/calculators/subtract?value1=10&value2=4",function successCallback(response) {
      var body='';
       response.on('data', function(d) {
           body += d;
@@ -63,7 +63,7 @@ gulp.task('test-multiply', function () {
   console.log("RUNNING MUTLIPLICATION TEST");
    console.log("Should return multiplication equal to 40 with value1 = 10 and value2 = 4");
 
-   http.get("http://0.0.0.0:3000/api/calculators/multiply?value1=10&value2=4",function successCallback(response) {
+   http.get("http://0.0.0.0:5000/api/calculators/multiply?value1=10&value2=4",function successCallback(response) {
      var body='';
       response.on('data', function(d) {
           body += d;
@@ -84,7 +84,7 @@ gulp.task('test-divide', function () {
   console.log("RUNNING DIVISION TEST");
    console.log("Should return result equal to 2.5 with value1 = 10 and value2 = 4");
 
-   http.get("http://0.0.0.0:3000/api/calculators/divide?value1=10&value2=4",function successCallback(response) {
+   http.get("http://0.0.0.0:5000/api/calculators/divide?value1=10&value2=4",function successCallback(response) {
      var body='';
       response.on('data', function(d) {
           body += d;

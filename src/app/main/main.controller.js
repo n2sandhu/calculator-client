@@ -6,21 +6,20 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(Calculator, toastr, $http) {
+  function MainController(toastr, $http) {
     var vm = this;
     vm.displayValue = 0;
     var value1 = 0;
     var value2 = 0;
     vm.operator = "";
     var firstDecimalClick = false;
-    var baseUrl = "http://0.0.0.0:3000/api";
+    var baseUrl = "http://0.0.0.0:5000/api";
     var responseLinks = {};
     var link = "/calculators/getLinks";
 
     $http.get(baseUrl+ link).then(function successCallback(response) {
-      console.log(response);
       responseLinks = response.data;
-    }, function errorCallback(response) {
+    }, function errorCallback() {
       toastr.error("Error while fetching data from server. Try refreshing the page");
     });
 
@@ -83,7 +82,6 @@
     value2 = vm.displayValue;
     var linkSplit = (responseLinks._links[operator].href).split("?");
     link = linkSplit[0];
-    console.log(link);
     
     $http.get(baseUrl+ link,{params: {value1: value1, value2: value2} }).then(function successCallback(response) {
       vm.displayValue = response.data;
